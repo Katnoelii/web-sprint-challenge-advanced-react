@@ -30,13 +30,35 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+We first declare our class component by extending the react component parent class. 
+Then we use the constructor function to set up state. We also need to call super() because we are 
+calling extends (if we didn't do this, we would not be able to access the 'this'). We then set up
+our state using this.state, and then we render some UI to the DOM by calling the Render() method. 
+
 2. Describe the different phases of the component lifecycle.
+
+The Mounting Phase invokes the render method and calls ComponentDidMount if needed.
+The Updating Phase then forces another render after each update by invoking setState.
+The Unmounting Phase will then remove the component from the screen and calls componentWillUnmount, but only if necessary.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+componentDidMount executes after the component mounts to the DOM. From there, the DOM can then be changed, or updated. 
+componentDidUpdate will run right after each update of the DOM, but it *will not* run on the first render. 
+componentWillUnmount fires before the component is unmounted and it removes the component, helpful for any "spring cleaning" necessary.
+
 4. Define stateful logic.
 
+Stateful logic is any code that typically deals with changing state within a component (though it does not always directly involve state).
+Some examples would be event handlers and hooks.
+
 5. Describe how to test a React component with React Testing Library.
+
+Utilize React's built-in testing Library to create test suits for your components. You just need to describe what you expect the test to be able to do,
+then go through each step and write code that helps create the task you described earlier. Examples could be rendering a form, finding an element, typing in and submitting a form,
+or clicking a button. Every time you save the test will run and you'll be able to check your progress and see if its responsive - when an error is thrown, it will typically through back a
+failed test and will help direct you on how to fix it. 
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
