@@ -30,13 +30,35 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+We first declare our class component by extending the react component parent class. 
+Then we use the constructor function to set up state. We also need to call super() because we are 
+calling extends (if we didn't do this, we would not be able to access the 'this'). We then set up
+our state using this.state, and then we render some UI to the DOM by calling the Render() method. 
+
 2. Describe the different phases of the component lifecycle.
+
+The Mounting Phase invokes the render method and calls ComponentDidMount if needed.
+The Updating Phase then forces another render after each update by invoking setState.
+The Unmounting Phase will then remove the component from the screen and calls componentWillUnmount, but only if necessary.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+componentDidMount executes after the component mounts to the DOM. From there, the DOM can then be changed, or updated. 
+componentDidUpdate will run right after each update of the DOM, but it *will not* run on the first render. 
+componentWillUnmount fires before the component is unmounted and it removes the component, helpful for any "spring cleaning" necessary.
+
+
 4. Define stateful logic.
 
+Stateful logic is any code that typically deals with changing state within a component (though it does not always directly involve state).
+Some examples would be event handlers and hooks.
+
 5. Describe how to test a React component with React Testing Library.
+
+Utilize React's built-in testing Library to create test suits for your components. You just need to describe what you expect the test to be able to do,
+then go through each step and write code that helps create the task you described earlier. Examples could be rendering a form, finding an element, typing in and submitting a form,
+or clicking a button. Every time you save the test will run and you'll be able to check your progress and see if its responsive - when an error is thrown, it will typically through back a
+failed test and will help direct you on how to fix it. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -89,9 +111,9 @@ Your finished project must include all of the following requirements:
 
 Display a list of the plants from the server. This should be done in the class component `PlantList`.
 
-- [ ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
-- [ ] Set the data to a state property called `this.state.plants`
-- [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
+- [x] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
+- [x] Set the data to a state property called `this.state.plants`
+- [x] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
 
 #### Shopping Cart
 
@@ -101,14 +123,14 @@ Nothing needs to be done here. You _will_ have to navigate to the cart page in y
 
 The form is working, but it is currently controlled by local stateful logic. We want to control this form with a custom hook.
 
-- [ ] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic
+- [x] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic
 
 _Note: You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 #### Testing the Checkout Form
 
-- [ ] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
-- [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
+- [x] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
+- [x] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
 
 <hr/>
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
